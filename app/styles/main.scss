@@ -1,31 +1,52 @@
-// bower:scss
-// endbower
+@import "_vars";
+@import "_fonts";
+@import "_splash";
+@import "_inlog";
+@import "_apparaten";
 
-.browserupgrade {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
-}
-
-body {
-  background: #fafafa;
+body, html {
+  box-sizing: border-box;
+  height: 100%;
+  padding: 0;
+  margin: 0;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: #333;
+  color: black;
 }
 
-.hero-unit {
-  margin: 50px auto 0 auto;
-  width: 300px;
-  font-size: 18px;
-  font-weight: 200;
-  line-height: 30px;
-  background-color: #eee;
-  border-radius: 6px;
-  padding: 60px;
-  h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
+.container {
+  max-width: $mobile;
+  margin: 0 auto;
+  display: grid;
+
+  .navigation-container {
+    padding: 0;
+    margin: 40px 0 0;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+    ". . ."
+    ". . ."
+    "l1 l2 l3";
+    .navigation-item:nth-child(1n) {
+      grid-area: l1;
+    }
+    .navigation-item:nth-child(2n) {
+      grid-area: l2;
+    }
+    .navigation-item:nth-child(3n) {
+      grid-area: l3;
+    }
+    li {
+      list-style: none;
+    }
+  }
+
+  .logo-background {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -44%);
+    font-family: 'Saijs';
+    font-size: 100px;
   }
 }
