@@ -1,10 +1,18 @@
 
-$mobile: 400px;
+$mobile: 320px;
 $tablet-portrait: 768px;
 $table-landscape: 1024px; 
 
+$color-light-grey: #F9F9F9;
 $color-dark: #333333;
 $color-black: #272727;
+
+$nav-font-size-mobile: 20ps;
+
+$row-height-mobile: 80px;
+
+
+$top-spacing-mobile: 100px;
 
 
 @mixin mobile {
