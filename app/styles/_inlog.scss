@@ -1,0 +1,36 @@
+
+.inlog {
+  height: 100%;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: repeat(8, 1fr);
+  grid-template-areas:
+    "."
+    "."
+    "."
+    "t"
+    "a"
+    "."
+    "."
+    "."
+}
+
+.inlog-text {
+  grid-area: t;
+  margin: 0 auto;
+}
+
+.inlog-account {
+  grid-area: a;
+  margin: 0 auto;
+  position: relative;
+  &:before{
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 2px;
+    background-color: $color-black;
+    margin: -10px 0 0 calc(50% - 10px); 
+  }
+}

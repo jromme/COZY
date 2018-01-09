@@ -15,7 +15,7 @@
     <!-- endbuild -->
 
     <!-- build:css styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="/styles/main.css">
     <!-- endbuild -->
     
     <!-- build:js scripts/vendor/modernizr.js -->
@@ -23,67 +23,51 @@
     <!-- endbuild -->
   </head>
   <body>
-    <div class="logo-background">COZY</div>
+      <!--[if IE]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+      <![endif]-->
+    <div class="container">
+      <div class="logo-background">COZY</div>
 
-    <nav class="navigation">
-      <ul class="navigation-container">
-        <li class="navigation-item">
-          Apparaten
-        </li>
-        <li class="navigation-item">
-          Sc&#232;nes
-        </li>
-        <li class="navigation-item">
-          Temperatuur
-        </li>
-      </ul>
-    </nav>
-    <!--[if IE]>
-      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-    
-    <div class="apparaten overzicht-component">
-      <h1 class="h1">Apparaten</h1>
-      <div class="apparaat-container">
-        <p class="apparaat">Sonos</p>
-      </div>
-      <div class="apparaat-container">
-        <p class="apparaat">Philips Ambilight</p>
-      </div>
-      <div class="apparaat-container">
-        <p class="apparaat">Miele ovencombinatie</p>
-      </div>
-      <div class="apparaat-container">
-        <p class="apparaat">Toon</p>
-      </div>
-      <p class="apparaat-toevoegen">&#43; Apparaat toevoegen</p>
-    </div>
+      <nav class="navigation">
+        <ul class="navigation-container">
+          <li class="navigation-item">
+            <a href="/pages/04_apparaten/index.html">Apparaten</a>
+          </li>
+          <li class="navigation-item">
+            <a href="/pages/05_scenes/index.html" class="active">Sc&#232;nes</a>
+          </li>
+          <li class="navigation-item">
+            <a href="/pages/06_temperatuur/index.html">Temperatuur</a>
+          </li>
+        </ul>
+      </nav>
 
-    <div class="scenes overzicht-component">
-      <h1 class="h1">Sc&#232;nes</h1>
-      <div class="apparaat-container">
-        <p class="apparaat">Romantisch</p>
+      <div class="scenes">
+        <h1 class="h1 scenes-titel">Sc&#232;nes</h1>
+        <div class="scene-container">
+          <div class="scene">
+            <img src="/images/toon.png" alt="Toon">
+            <img src="/images/sonos.png" alt="Sonos">
+             <img src="/images/sonos.png" alt="Sonos">
+            <p class="h3 scene-text">Romantisch</p></div>
+          <div class="scene">
+            <img src="/images/sonos.png" alt="Sonos">
+            <img src="/images/toon.png" alt="Toon">
+            <p class="h3 scene-text">Party machen</p>
+          </div>
+          <div class="scene">
+            <img src="/images/miele.jpg" alt="Miele">
+            <p class="h3 scene-text">Werken</p>
+          </div>
+          <div class="scene">
+            <img src="/images/philips_hue_go.jpeg" alt="Philips Hue Go">
+            <p class="h3 scene-text">Relax</p>
+          </div>
+          <div class="scene"><p class="scene-toevoegen">&#43; scene toevoegen</p></div>
+       </div>
       </div>
-      <div class="apparaat-container">
-        <p class="apparaat">Party machen</p>
-      </div>
-      <div class="apparaat-container">
-        <p class="apparaat">Relax</p>
-      </div>
-      <div class="apparaat-container">
-        <p class="apparaat">Workflow</p>
-      </div>
-      <p class="apparaat-toevoegen">&#43; Sc&#232;ne toevoegen</p>
     </div>
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-    <script>
-      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-      e.src='https://www.google-analytics.com/analytics.js';
-      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-      ga('create','UA-XXXXX-X');ga('send','pageview');
-    </script>
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
@@ -92,7 +76,7 @@
     <!-- endbuild -->
     
     <!-- build:js scripts/main.js -->
-    <script src="scripts/main.js"></script>
+    <script src="/scripts/main.js"></script>
     <!-- endbuild -->
   </body>
 </html>

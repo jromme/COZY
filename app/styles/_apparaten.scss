@@ -1,0 +1,66 @@
+
+.apparaten {
+  height: 100%;
+  min-height: calc(100vh - #{$top-spacing-mobile});
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: $row-height-mobile auto;
+  grid-template-areas:
+    "t";
+}
+
+.apparaten-titel {
+  grid-area: t;
+  text-align: bottom;
+}
+
+.apparaat-container {
+  grid-row: 2 / -1;
+  display: grid;
+  grid-gap: 20px;
+  grid-auto-rows: 90px;
+
+  .apparaat {
+    padding: 5px;
+    border-radius: 4px;
+    background-color: $color-light-grey;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    grid-auto-rows: 75px;
+    grid-column-gap: 8px;
+  }
+
+  .apparaat > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    grid-column: 1 / 2;
+    mix-blend-mode: multiply;
+  }
+  .apparaat > .apparaat-text {
+    grid-column: 2 / 4;
+    line-height: $row-height-mobile;
+    text-align: left;
+    margin-left: 10px;
+  }
+  .apparaat > .apparaat-toevoegen {
+    grid-column: 2 / 4;
+    line-height: $row-height-mobile;
+    text-align: center;
+    margin-left: 0px;
+  }
+}
+
+.inlog-account {
+  grid-area: a;
+  margin: 0 auto;
+  position: relative;
+  &:before{
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 2px;
+    background-color: $color-black;
+    margin: -10px 0 0 calc(50% - 10px); 
+  }
+}
