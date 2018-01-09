@@ -4,10 +4,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
   }
 
   if (window.location.href == "http://localhost:9000/pages/06_temperatuur/index.html") {
-      console.log(
-        $('.dial').knob()
-      )
-
         $(".dial").knob({
           'min':-50,
           'max':50,
