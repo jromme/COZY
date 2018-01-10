@@ -1,17 +1,30 @@
-require("jquery-knob");
+jQuery(document).ready(() => {
+  switch(window.location.href) {
+    case 'http://localhost:9000/':
+      routeLanding()
+    break;
 
-document.addEventListener("DOMContentLoaded", function(event) { 
-  if (window.location.href == "http://localhost:9000/") {
-    setTimeout(function () {window.location.href = "/pages/02_inlog/index.html";}, 2000);
+    case 'http://localhost:9000/pages/06_temperatuur/index.html':
+      routeTemperature()
+    break;
+
+    default:
+      console.error('Location not found')
   }
+})
 
-  if (window.location.href == "http://localhost:9000/pages/06_temperatuur/index.html") {
-       
-        $(".dial").knob({
-          'min':-50,
-          'max':50,
-          'value':75,
-        });
-  }
-});
+const routeLanding = () => {
+  setTimeout(function () { window.location.href = "/pages/02_inlog/index.html"; }, 2000);
+}
 
+const routeTemperature = () => {
+  $('.dial').knob({
+    'min': 7,
+    'max': 31,
+    'change' : function(v){
+      $(".temperatuur-value").text(Math.round(v));
+    }
+  })
+}
+
+ 

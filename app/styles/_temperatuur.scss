@@ -1,71 +1,35 @@
 
 .temperatuur-container {
   display: grid;
-  background-color: grey;
   grid-template-rows: repeat(4, minmax(200px, 1fr));
 
   .temperatuur {
-  
-              .unselectable {
-            -moz-user-select: -moz-none;
-            -khtml-user-select: none;
-            -webkit-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
-
-        .knop .cursor {
-            fill: silver;    
-        }
-        
-        .knop .tick {
-            fill: silver;
-            font-size: 14px;
-            font-weight: bold;
-        }
-
-        .knop .major line {
-            stroke: silver;
-            stroke-width: 2px;
-        }
-
-        .ind .lane, .ind .cursor {
-            opacity: 0;
-        }
-
-        .ind .tick {
-            fill: silver;
-            font-size: 14px;
-            font-weight: bold;
-        }
-
-        .ind .major line {
-            stroke: silver;
-            stroke-width: 1px;
-        }
-
-        .ind .domain {
-            stroke: silver;
-            stroke-width: 1px;
-        }
-
-        .ind .tick {
-            fill: silver;
-            font-size: 10px;
-            font-weight: normal;
-        }
-
-        .ind .indicator {
-            stroke: #EE3311;
-            fill: #000;
-            stroke-width: 1px;
-        }
-
-
-
-
-
-
+    display: grid;
+    align-items: flex-end;
+    grid-template-areas: 
+      "v c"
+      "k k"
+      "d d";
+    grid-template-columns: 55% 45%;
+    .temperatuur-value {
+      font-size: $font-size-xl-mobile;
+      text-align: right;
+      grid-area: v;
+    }
+    .temperatuur-celsius {
+      text-align: left;
+      line-height: 60px;
+      grid-area: c;
+      margin-top: calc(#{$font-size-xl-mobile} / 1.7);
+    }
+    .temperatuur-kalender {
+      grid-area: k;
+      text-align: center;
+      margin: -15px 0 20px;
+    }
+    .temperatuur-selector {
+      grid-area: d;
+    }
   }
 
   .kalender {
@@ -75,7 +39,7 @@
   .invoer {
     display: grid;
     background-color: yellow;
-    grid-template-rows: auto 50px auto;
+    grid-template-rows: auto 20px auto;
     .invoer-instellen {
       
     }

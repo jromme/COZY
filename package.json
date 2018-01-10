@@ -45,7 +45,6 @@
     }
   },
   "dependencies": {
-    "jquery": "^3.2.1",
-    "jquery-knob": "^1.2.11"
+    "jquery": "^3.2.1"
   }
 }

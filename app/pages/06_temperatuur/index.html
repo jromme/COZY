@@ -17,7 +17,7 @@
     <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="/styles/main.css">
     <!-- endbuild -->
-    
+
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="/bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
@@ -45,7 +45,11 @@
 
       <div class="temperatuur-container">
         <div class="temperatuur">
-          <input type="text" class="dial">
+          <div class="h1 temperatuur-value">19</div><div class="h2 temperatuur-celsius">&deg;C</div>
+          <div class="h3 temperatuur-kalender">MON NOV 15</div>
+          <div class="temperatuur-selector">
+            <input type="text" class="dial" data-width="320" data-height="58" data-thickness=".1" data-displayInput="false" value="19" data-angleArc="100" data-angleOffset="-50" data-fgColor="#222222">
+          </div>
         </div>
         <div class="kalender"></div>
         <div class="invoer">
@@ -66,10 +70,12 @@
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
     <script src="/bower_components/modernizr/modernizr.js"></script>
+    <script src="/bower_components/jquery-knob/js/jquery.knob.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
-    
+
     <!-- build:js scripts/main.js -->
     <script src="/scripts/main.js"></script>
     <!-- endbuild -->
