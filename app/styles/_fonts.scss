@@ -1,13 +1,26 @@
 
 
-$font-size-h1: 80px;
-$font-size-h1-mobile: 58px;
+//xl
+$font-size-xl-mobile: 70px;
+$font-size-xl-tablet: 85px;
+$font-size-xl-desktop: 100px;
+//h1
+$font-size-h1-mobile: 30px;
 $font-size-h1-tablet: 65px;
-
-$font-size-p: 18px;
+$font-size-h1-desktop: 80px;
+//h2
+$font-size-h2-mobile: 20px;
+$font-size-h2-tablet: 40px;
+$font-size-h2-desktop: 50px;
+//p
 $font-size-p-mobile: 12px;
 $font-size-p-tablet: 15px;
-
+$font-size-p-desktop: 18px;
+//nav
+$nav-font-size-mobile: 20px;
+$nav-font-size-tablet: 25px;
+$nav-font-size-desktop: 30px;
+//spacing
 $font-letterspacing-h1: 3px;
 $font-letterspacing-h1-mobile: .5px;
 
@@ -20,7 +33,7 @@ a {
 
 .h1 {
   font-family: 'Saijs';
-  font-size: 30px;
+  font-size: $font-size-h1-mobile;
 }
 
 .h2 {
