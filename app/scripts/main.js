@@ -1,4 +1,4 @@
-$(document).ready(() => {
+jQuery(document).ready(() => {
   switch(window.location.href) {
     case 'http://localhost:9000/':
       routeLanding()
@@ -19,8 +19,12 @@ const routeLanding = () => {
 
 const routeTemperature = () => {
   $('.dial').knob({
-    'min': -50,
-    'max': 50,
-    'value': 75,
+    'min': 7,
+    'max': 31,
+    'change' : function(v){
+      $(".temperatuur-value").text(Math.round(v));
+    }
   })
 }
+
+ 
