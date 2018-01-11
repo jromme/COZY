@@ -59,7 +59,7 @@ gulp.task('lint:test', () => {
 gulp.task('subpages', function() {
   return gulp.src('app/pages/**/*.html')
     .pipe($.useref({searchPath: ['.tmp', 'app', '.']}))
-    .pipe(gulp.dest('dist/pages'));
+    .pipe(gulp.dest('dist'));
 });
 
 gulp.task('html', ['styles', 'scripts', 'subpages'], () => {

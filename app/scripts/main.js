@@ -6,7 +6,7 @@ jQuery(document).ready(() => {
       routeLanding()
     break;
 
-    case '/pages/06_temperatuur/index.html':
+    case '/06_temperatuur/index.html':
       routeTemperature()
       kalender()
     break;
@@ -17,7 +17,7 @@ jQuery(document).ready(() => {
 })
 
 const routeLanding = () => {
-  setTimeout(function () { window.location.pathname = '/pages/02_inlog/index.html'; }, 2000);
+  setTimeout(function () { window.location.pathname = '/02_inlog/index.html'; }, 2000);
 }
 
 const routeTemperature = () => {
