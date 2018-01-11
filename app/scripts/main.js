@@ -1,10 +1,10 @@
 jQuery(document).ready(() => {
-  switch(window.location.href) {
-    case 'http://localhost:9000/':
+  switch(window.location.pathname) {
+    case '/':
       routeLanding()
     break;
 
-    case 'http://localhost:9000/pages/06_temperatuur/index.html':
+    case '/pages/06_temperatuur/index.html':
       routeTemperature()
       kalender()
     break;
