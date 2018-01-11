@@ -6,6 +6,7 @@ jQuery(document).ready(() => {
 
     case 'http://localhost:9000/pages/06_temperatuur/index.html':
       routeTemperature()
+      kalender()
     break;
 
     default:
@@ -24,6 +25,17 @@ const routeTemperature = () => {
     'change' : function(v){
       $(".temperatuur-value").text(Math.round(v));
     }
+  })
+}
+
+const kalender = () => {
+  $('#calendar').datepicker({
+        inline: true,
+        firstDay: 1,
+        prevText: "◄",
+        nextText: "►",
+        showOtherMonths: true,
+        dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
   })
 }
 

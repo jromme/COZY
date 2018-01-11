@@ -1,0 +1,80 @@
+.kalender {
+  @include widthAndPadding;
+  #calendar {
+
+    //reset
+    .ui-datepicker,
+    .ui-datepicker table,
+    .ui-datepicker tr,
+    .ui-datepicker td,
+    .ui-datepicker th {
+        margin: 0;
+        padding: 0;
+        border: none;
+        border-spacing: 0;
+    }
+
+      .ui-datepicker {
+      .ui-datepicker-header {
+        margin: 10px 0;
+        display: grid;
+        @include widthAndPadding;
+        grid-template-areas: 
+          "dp dt dn";
+        @include tablet() {
+          margin: 0;
+          padding-bottom: 20px;
+        }
+        .ui-datepicker-prev {
+          grid-area: dp;
+          text-align: left;
+          cursor: pointer;
+        }
+        .ui-datepicker-next {
+          grid-area: dn;
+          text-align: right;
+          cursor: pointer;
+        }
+        .ui-datepicker-title {
+          text-align: center;
+          grid-area: dt;
+        }
+      }    
+      .ui-datepicker-calendar {
+      display: grid;
+      grid-template-rows: 100%;
+      text-align: right;
+      @include tablet() {
+        background-color: $color-light-grey;
+      }
+        thead, tbody {
+          @include widthAndPadding;
+          tr {
+            display: grid;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            grid-template-columns: repeat(7, calc(#{$mobile-no-padding} / 7));
+            @include p;
+            th span{
+              @include p;
+            }
+            td {
+              text-align: right;
+              a {
+                color: $color-black;
+              }
+              span.ui-state-default {
+                  color: $color-grey;
+              }
+              .ui-state-active {
+                border-bottom: 2px solid black; 
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

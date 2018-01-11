@@ -26,9 +26,9 @@
     <!--[if IE]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+    
     <div class="container">
       <div class="logo-background">COZY</div>
-
       <nav class="navigation">
         <ul class="navigation-container">
           <li class="navigation-item">
@@ -45,17 +45,58 @@
 
       <div class="temperatuur-container">
         <div class="temperatuur">
-          <div class="h1 temperatuur-value">19</div><div class="h2 temperatuur-celsius">&deg;C</div>
+          <div class="h1 temperatuur-value">21</div><div class="h2 temperatuur-celsius">&deg;C</div>
           <div class="h3 temperatuur-kalender">MON NOV 15</div>
           <div class="temperatuur-selector">
-            <input type="text" class="dial" data-width="320" data-height="58" data-thickness=".1" data-displayInput="false" value="19" data-angleArc="100" data-angleOffset="-50" data-fgColor="#222222">
+            <input type="text" class="dial" data-width="320" data-height="58" data-thickness=".1" data-displayInput="false" value="21" data-angleArc="100" data-angleOffset="-50" data-fgColor="#222222">
           </div>
         </div>
-        <div class="kalender"></div>
-        <div class="invoer">
-          <div class="invoer-instellen"></div>
-          <div class="invoer-kiezen"></div>
+        <div class="spacer"></div>
+        <div class="kalender">
+          <div id="calendar"></div>
         </div>
+        <div class="spacer"></div>
+        <div class="invoer">
+          <div class="invoer-instellen">
+            <div class="p invoer-input">
+              I want the temperature to be <input type="text" value="'temp'" class="p invoer-input-temp"> from <input type="text" value="'start time'" class="p invoer-input-start-time"> till <input type="text" value="'end time'" class="p invoer-input-end-time">.
+            </div>
+            <div class="temp-instellingen">
+              <div class="p temp-instelling">
+                <div class="temp-instelling-time">06.30u - 09.00u</div>
+                <div class="temp-instelling-temp">21&deg;C</div>
+                <div class="temp-instelling-remove">&#8854;</div>
+              </div>
+              <div class="p temp-instelling">
+                <div class="temp-instelling-temp">17.30u - 21.00u</div>
+                <div class="temp-instelling-temp">22&deg;C</div>
+                <div class="temp-instelling-remove">&#8854;</div>
+              </div>
+            </div>
+            <div class="p invoer-default-temp-container">
+              <div class="invoer-default-temp-text">Default temperature is <input type="text" value="'temp'" class="p invoer-default-temp-text-input">.</div>
+              <div class="invoer-default-temp-set">Set this temperature as default.</div>
+            </div>
+          </div>
+          <div class="h3 invoer-divider">or</div>
+          <div class="p invoer-kiezen">
+            <div class="invoer-kiezen-titel">Use a programmed setting:</div>
+            <div class="invoer-kiezen-option">
+              <div class="invoer-kiezen-option-name">Training</div>
+              <div class="invoer-kiezen-option-remove">&#8854;</div>
+            </div>
+            <div class="invoer-kiezen-option">
+              <div class="invoer-kiezen-option-name">Party</div>
+              <div class="invoer-kiezen-option-remove">&#8854;</div>
+            </div>
+            <div class="invoer-kiezen-option">
+              <div class="invoer-kiezen-option-name">Late nights</div>
+              <div class="invoer-kiezen-option-remove">&#8854;</div>
+            </div>
+            <div class="invoer-kiezen-save-option">Save current setting as <input type="text" value="'setting'" class="p invoer-kiezen-save-option-save"></div>
+          </div>        
+        </div>
+        <div class="spacer"></div>
       </div>
     </div>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
@@ -73,6 +114,7 @@
     <script src="/bower_components/jquery/dist/jquery.js"></script>
     <script src="/bower_components/modernizr/modernizr.js"></script>
     <script src="/bower_components/jquery-knob/js/jquery.knob.js"></script>
+    <script src="/bower_components/jquery-ui/ui/widgets/datepicker.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 

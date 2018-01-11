@@ -5,26 +5,53 @@
 @import "_apparaten";
 @import "_scenes";
 @import "_temperatuur";
+@import "_kalender";
 
 body, html {
   box-sizing: border-box;
-  height: 100%;
-  padding: 0;
+  min-height: 100vh;
   margin: 0;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Saijs', Helvetica, Arial, sans-serif;
   color: black;
 }
 
-.container {
-  max-width: $mobile;
-  min-height: calc(100vh - #{$top-spacing-mobile});
-  margin: 0 auto;
-  padding: 0 15px 40px;
-  display: grid;
-  grid-template-rows: $top-spacing-mobile auto;
-  z-index: 2;
+body {
+    padding: 0 10px;
+    width: $mobile;
+    margin: 0 auto;
+    background-color: white;
+    @include tablet() {
+      width: $tablet;
+    }
+    @include desktop() {
+      width: $desktop;
+    }
+}
 
-  .navigation-container {
+
+
+.logo-background {
+    position: relative;
+    margin-top: -60px;
+    font-family: 'Saijs';
+    font-size: 100px;
+    cursor: default;
+    text-align: center;
+}
+
+.container {
+  @include widthAndPadding;
+  height: 100vh;
+  margin: 0 auto;
+  display: grid;
+  grid-template-rows: $top-spacing-mobile $mobile-spacing auto;
+
+  .spacer {
+    @include spacer;
+  }
+
+  .navigation-container { 
+    @include widthAndPadding;
     font-family: "Saijs";
     font-size: 15px;
     padding: 0;
@@ -52,15 +79,5 @@ body, html {
         margin-left: 20px;
       }
     }
-  }
-
-  .logo-background {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, -45%);
-    font-family: 'Saijs';
-    font-size: 100px;
-    cursor: default;
-    z-index: 1;
   }
 }

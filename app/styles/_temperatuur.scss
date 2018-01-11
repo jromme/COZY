@@ -1,9 +1,13 @@
 
 .temperatuur-container {
   display: grid;
-  grid-template-rows: repeat(4, minmax(200px, 1fr));
+  grid-template-row: 200px auto 200px auto 200px auto;
+  justify-content: center;
+  align-items: center;
+  @include widthAndPadding;
 
   .temperatuur {
+    @include widthAndPadding;
     display: grid;
     align-items: flex-end;
     grid-template-areas: 
@@ -11,6 +15,9 @@
       "k k"
       "d d";
     grid-template-columns: 55% 45%;
+    @include tablet() {
+      grid-template-columns: 53% 47%;
+    }
     .temperatuur-value {
       font-size: $font-size-xl-mobile;
       text-align: right;
@@ -30,21 +37,140 @@
     .temperatuur-selector {
       grid-area: d;
     }
-  }
-
-  .kalender {
-
+    .temperatuur-selector canvas {
+      margin-left: 50%;
+      transform: translateX(-50%);
+    }
   }
   
   .invoer {
     display: grid;
-    background-color: yellow;
-    grid-template-rows: auto 20px auto;
+    grid-template-rows: auto 70px auto;
+    grid-row-gap: 5px;
+    .invoer-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .invoer-input {
+      grid-area: invoer-input;
+
+      .invoer-input-temp {
+        width: 60px;
+      }
+      .invoer-input-start-time {
+        width: 90px;
+      }
+      .invoer-input-end-time {
+        width: 90px;
+      }
+      .invoer-input-temp,
+      .invoer-input-start-time,
+      .invoer-input-end-time {
+        @include input-field;
+      }
+    }
+
+    .invoer-default-temp-container {
+      grid-area: invoer-default-temp-container;
+    }
     .invoer-instellen {
-      
+      display: grid;
+      align-items: center;
+      grid-template-areas:
+        "invoer-input"
+        "temp-instellingen"
+        "invoer-default-temp-container";
+      grid-template-rows: repeat(3, auto);
+      grid-row-gap: 15px;
+
+
+      .temp-instellingen {
+
+        .temp-instelling {
+          display: grid;
+          grid-template-columns: 60% 30% 10%;
+          background-color: $color-light-grey;
+          margin-bottom: 5px; //parent and child with display:grid gives bug in safari --> thats why no 2nd grid but margin-bottom
+          &:last-child {
+            margin-bottom: 0;
+          }
+          .temp-instelling-time {
+
+          }
+
+          .temp-instelling-temp {
+            
+          }
+
+          .temp-instelling-remove {
+            cursor: pointer;
+          }
+        }
+      }
+      .invoer-default-temp-container {
+        line-height: 107%;
+        .invoer-default-temp-text-input {
+          width: 60px;
+          @include input-field;
+        }
+      }
     }
     .invoer-kiezen {
+      display: grid;
+      align-items: center;
+      grid-row-gap: 5px;
+      .invoer-kiezen-titel {}
+      .invoer-kiezen-option {
+          display: grid;
+          grid-template-columns: 90% 10%;
+          background-color: $color-light-grey;
 
+        .invoer-kiezen-option-name {
+
+        }
+        .invoer-kiezen-option-remove {
+          cursor: pointer;
+        }
+      }
+      .invoer-kiezen-save-option {
+        .invoer-kiezen-save-option-save {
+          width: 75px;
+          @include input-field;
+        }
+      }
     }
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

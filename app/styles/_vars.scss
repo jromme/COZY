@@ -1,31 +1,73 @@
 
 $mobile: 320px;
-$tablet-portrait: 768px;
-$table-landscape: 1024px; 
+$mobile-no-padding: 300px;
+$tablet: 768px;
+$desktop: 1024px; 
+
+$padding-mobile: 20px;
+$padding-tablet: 40px;
+$padding-desktop: 60px;
 
 $color-light-grey: #F9F9F9;
+$color-grey: #D8D8D8;
 $color-dark: #333333;
 $color-black: #272727;
 
 $row-height-mobile: 80px;
 
-$top-spacing-mobile: 100px;
+$top-spacing-mobile: 50px;
+$mobile-spacing: 40px;
+
+@mixin widthAndPadding {
+  width: calc(#{$mobile} - #{$padding-mobile});
+  @include tablet() {
+    width: calc(#{$tablet} - #{$padding-mobile});
+  }
+  @include desktop() {
+    width: calc(#{$tablet} - #{$padding-desktop});
+  }
+}
+
+// @mixin width1 {
+//   width: calc(#{$mobile} - #{$padding-mobile});
+//   @include tablet() {
+//     width: calc(#{$mobile} - #{$padding-tablet});
+//   }
+//   @include desktop() {
+//     width: calc(#{$mobile} - #{$padding-desktop});
+//   }
+// }
+
+@mixin spacer {
+  min-height: $mobile-spacing;
+}
+
+@mixin input-field {
+  line-height: 107%;
+  border: none;
+  background-color: black;
+  color: white;
+  text-align: center;
+  &:focus {
+    outline: none;
+  }
+}
 
 
 @mixin mobile {
-  @media (min-width: $mobile) and (max-width: $tablet-portrait) {
+  @media (min-width: $mobile) and (max-width: $tablet) {
     @content;
   }
 }
 
-@mixin tablet-portrait {
-  @media (min-width: $tablet-portrait) and (max-width: $table-landscape) {
+@mixin tablet {
+  @media (min-width: $tablet) and (max-width: $desktop) {
     @content;
   }
 }
 
-@mixin tablet-landscape {
-  @media (min-width: $table-landscape) {
+@mixin desktop {
+  @media (min-width: $desktop) {
     @content;
   }
 }
