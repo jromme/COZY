@@ -1,10 +1,22 @@
 jQuery(document).ready(() => {
-  switch(window.location.pathname) {
-    case '/':
+  switch(window.location.href) {
+
+    //localhost
+    case 'http://localhost:9000/':
       routeLanding()
     break;
 
-    case '/pages/06_temperatuur/index.html':
+    case 'http://localhost:9000/pages/06_temperatuur/index.html':
+      routeTemperature()
+      kalender()
+    break;
+
+    //adding netlify
+    case 'http://wonderful-davinci-ae1597.netlify.com/':
+      routeLanding()
+    break;
+
+    case 'http://wonderful-davinci-ae1597.netlify.com/pages/06_temperatuur/index.html':
       routeTemperature()
       kalender()
     break;
