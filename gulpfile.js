@@ -56,7 +56,12 @@ gulp.task('lint:test', () => {
     .pipe(gulp.dest('test/spec'));
 });
 
-gulp.task('html', ['styles', 'scripts'], () => {
+gulp.task('subpages', function() {
+  return gulp.src('app/pages/**/*.html')
+    .pipe(gulp.dest('dist/pages'));
+});
+
+gulp.task('html', ['styles', 'scripts', 'subpages'], () => {
   return gulp.src('app/*.html')
     .pipe($.useref({searchPath: ['.tmp', 'app', '.']}))
     .pipe($.if(/\.js$/, $.uglify({compress: {drop_console: true}})))
