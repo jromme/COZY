@@ -55,13 +55,13 @@
       grid-area: invoer-input;
 
       .invoer-input-temp {
-        width: 60px;
+        width: 65px;
       }
       .invoer-input-start-time {
-        width: 90px;
+        width: 112px;
       }
       .invoer-input-end-time {
-        width: 90px;
+        width: 97px;
       }
       .invoer-input-temp,
       .invoer-input-start-time,
@@ -110,7 +110,7 @@
       .invoer-default-temp-container {
         line-height: 107%;
         .invoer-default-temp-text-input {
-          width: 60px;
+          width: 65px;
           @include input-field;
         }
       }
@@ -134,7 +134,7 @@
       }
       .invoer-kiezen-save-option {
         .invoer-kiezen-save-option-save {
-          width: 75px;
+          width: 80px;
           @include input-field;
         }
       }
