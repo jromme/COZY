@@ -17,7 +17,7 @@ jQuery(document).ready(() => {
 })
 
 const routeLanding = () => {
-  setTimeout(function () { window.location.href = '/pages/02_inlog/index.html'; }, 2000);
+  setTimeout(function () { window.location.pathname = '/pages/02_inlog/index.html'; }, 2000);
 }
 
 const routeTemperature = () => {
