@@ -58,6 +58,7 @@ gulp.task('lint:test', () => {
 
 gulp.task('subpages', function() {
   return gulp.src('app/pages/**/*.html')
+    .pipe($.useref({searchPath: ['.tmp', 'app', '.']}))
     .pipe(gulp.dest('dist/pages'));
 });
 
@@ -86,7 +87,7 @@ gulp.task('images', () => {
 });
 
 gulp.task('fonts', () => {
-  return gulp.src(require('main-bower-files')('**/*.{eot,svg,ttf,woff,woff2}', function (err) {})
+  return gulp.src(require('main-bower-files')('**/*.{eot,svg,ttf,woff,woff2,otf}', function (err) {})
     .concat('app/fonts/**/*'))
     .pipe($.if(dev, gulp.dest('.tmp/fonts'), gulp.dest('dist/fonts')));
 });
