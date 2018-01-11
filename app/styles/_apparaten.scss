@@ -11,7 +11,7 @@
 
 .apparaten-titel {
   grid-area: t;
-  text-align: bottom;
+  text-align: center;
 }
 
 .apparaat-container {
@@ -33,19 +33,20 @@
   .apparaat > img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    max-height: 100%; //safari
+    max-width: 150px; //wide images
+    @include align-center;
+    object-fit: scale-down;
     grid-column: 1 / 2;
     mix-blend-mode: multiply;
   }
   .apparaat > .apparaat-text {
     grid-column: 2 / 4;
-    line-height: $row-height-mobile;
     text-align: left;
     margin-left: 10px;
   }
   .apparaat > .apparaat-toevoegen {
     grid-column: 2 / 4;
-    line-height: $row-height-mobile;
     text-align: center;
     margin-left: 0px;
   }

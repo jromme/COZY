@@ -38,8 +38,7 @@
       grid-area: d;
     }
     .temperatuur-selector canvas {
-      margin-left: 50%;
-      transform: translateX(-50%);
+      @include align-center;
     }
   }
   

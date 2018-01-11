@@ -28,6 +28,11 @@ $mobile-spacing: 40px;
   }
 }
 
+@mixin align-center {
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
 // @mixin width1 {
 //   width: calc(#{$mobile} - #{$padding-mobile});
 //   @include tablet() {
