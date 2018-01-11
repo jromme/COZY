@@ -15,7 +15,7 @@ jQuery(document).ready(() => {
 })
 
 const routeLanding = () => {
-  setTimeout(function () { window.location.href = "/pages/02_inlog/index.html"; }, 2000);
+  setTimeout(function () { window.location.href = '/pages/02_inlog/index.html'; }, 2000);
 }
 
 const routeTemperature = () => {
@@ -23,7 +23,7 @@ const routeTemperature = () => {
     'min': 7,
     'max': 31,
     'change' : function(v){
-      $(".temperatuur-value").text(Math.round(v));
+      $('.temperatuur-value').text(Math.round(v));
     }
   })
 }
@@ -32,8 +32,8 @@ const kalender = () => {
   $('#calendar').datepicker({
         inline: true,
         firstDay: 1,
-        prevText: "◄",
-        nextText: "►",
+        prevText: '◄',
+        nextText: '►',
         showOtherMonths: true,
         dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
   })
