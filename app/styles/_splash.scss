@@ -5,12 +5,18 @@
   align-items: center;
   overflow: hidden;
   .logo {
-    
+    position: absolute;
     animation:spin 4s linear infinite;
-    transform-origin: 41% center;
-
+    transform-origin: 40% center;
+    margin-left: 9%;
     font-family: "Saijs";
-    font-size: 300px;
+    font-size: 100px;
+    @include tablet() {
+      font-size: 200px;
+    }
+    @include desktop() {
+      font-size: 300px;
+    }
   }
 }
 

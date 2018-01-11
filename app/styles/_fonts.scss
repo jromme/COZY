@@ -29,6 +29,9 @@ $font-letterspacing-p-mobile: .7px;
 
 a {
   text-decoration: none;
+  &:visited {
+    color: black;
+  }
 }
 
 .h1 {
@@ -49,6 +52,12 @@ a {
 .p {
   font-family: 'Saijs';
   font-size: 16px;
+  @include tablet() {
+    font-size: 18px;
+  }
+  @include desktop() {
+    font-size: 20px;
+  }
 }
 
 @mixin p {
